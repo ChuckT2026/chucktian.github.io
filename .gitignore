@@ -1,0 +1,5 @@
+# 私发对照表含学员 token，勿部署 / 勿公开
+_admin/student_links.csv
+
+# 学员专属页用不可猜 URL，但静态站无真鉴权，默认不公开发布
+courses/s/*.html

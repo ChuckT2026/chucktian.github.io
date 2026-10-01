@@ -1,0 +1,4 @@
+﻿code,name,doc
+alice,Alice 王同学,https://docs.qq.com/slide/REPLACE_WITH_YOUR_EMBED_LINK_1
+bob,Bob 李同学,<iframe src="https://docs.qq.com/slide/REPLACE_WITH_YOUR_EMBED_LINK_2"></iframe>
+carol,Carol 张同学,https://docs.qq.com/slide/REPLACE_WITH_EMBED_3|https://docs.qq.com/slide/REPLACE_WITH_EMBED_4
