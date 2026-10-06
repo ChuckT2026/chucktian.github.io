@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Caoxinyue · 专属讲义 | Chuck Tian</title>
+<style>
+  :root{--navy:#0E2240;--accent:#2D6CDF;--bg:#F5F8FC;--ink:#1B2533;--muted:#5A6678;--line:#E3E9F2}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  .brand{font-weight:700;color:var(--navy);letter-spacing:.3px}
+  .brand span{color:var(--accent)}
+  .gate{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0E2240,#15315C);padding:20px}
+  .login{background:#fff;border-radius:16px;padding:34px 30px;width:100%;max-width:380px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+  .login .brand{font-size:20px;margin-bottom:14px}
+  .login h1{font-size:22px;color:var(--navy);margin-bottom:6px}
+  .login p{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .row{margin-bottom:14px}
+  .row label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .row input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:15px;outline:none}
+  .row input:focus{border-color:var(--accent)}
+  .login button{width:100%;padding:12px;background:var(--accent);color:#fff;border:0;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer}
+  .login button:hover{background:#1E50B5}
+  .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:18px}
+  .back{display:inline-block;margin-top:16px;font-size:13px;color:var(--muted)}
+  .nav{background:var(--navy);padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+  .nav .brand{color:#fff}
+  .nav .brand span{color:#9fc2f5}
+  .nav a{color:#cfe0f7;font-size:14px;font-weight:600}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  .hero{background:var(--navy);color:#fff;padding:40px 0 34px}
+  .hero h1{font-size:26px;margin:8px 0 6px;color:#fff}
+  .hero p{color:rgba(255,255,255,.82);font-size:14px}
+  .badge{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#E8F0FC;border-radius:6px;padding:3px 10px}
+  .expiry{display:inline-block;margin-top:10px;font-size:12px;color:#9fc2f5;background:rgba(255,255,255,.1);border-radius:6px;padding:4px 10px}
+  section{padding:30px 0}
+  .doc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+  .doc h3{color:var(--navy);font-size:17px;margin-bottom:4px}
+  .doc .meta{font-size:12px;color:var(--muted);margin-bottom:12px}
+  .frame{position:relative;width:100%;padding-top:75%;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fafcff}
+  .frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .pending{background:#fbf0e3;border:1px solid #f0d9bf;color:#8a5a1e;border-radius:10px;padding:16px;font-size:14px}
+  .warn{background:#fbf0e3;border:1px solid #f0d9bf;color:#8a5a1e;border-radius:10px;padding:12px 14px;font-size:13px;margin-top:6px}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 0}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <div class="login">
+    <div class="brand">Chuck Tian</div>
+    <h1>学员登录</h1>
+    <p>请输入你的账号与密码，进入专属讲义。</p>
+    <div class="row"><label>账号</label><input id="u" value="caoxinyue" readonly></div>
+    <div class="row"><label>密码</label><input id="p" type="password" placeholder="请输入密码" autocomplete="off"></div>
+    <button onclick="check()">进入讲义</button>
+    <div class="err" id="err"></div>
+    <a class="back" href="../../index.html">← 返回首页</a>
+  </div>
+</div>
+<div id="content" style="display:none">
+  <div class="nav"><div class="brand">Chuck Tian</div><a href="../../index.html">← 返回首页</a></div>
+  <section class="hero"><div class="wrap">
+    <span class="badge">STUDENT ZONE · 专属讲义</span>
+    <h1>Caoxinyue，这是你的专属讲义页</h1>
+    <p>本页只显示你本人的课程讲义，请在半年有效期内免费反复查看。</p>
+    <span class="expiry">有效期至 2027-04-06（半年免费复看）</span>
+  </div></section>
+  <section><div class="wrap">
+  <div class="pending">讲义即将上传，敬请期待。Chuck 上传后本页会自动更新，你可在有效期内随时回看。</div>
+    <div class="warn">提示：讲义由腾讯文档嵌入展示。如显示「无权限」，说明 Chuck 尚未为你开通该文档的查看权限，请微信联系 Chuck 开通。</div>
+  </div></section>
+  <footer>© 2026 Chuck Tian · AI &amp; Strategy OPC · 专属内容，仅供本人查看</footer>
+</div>
+<script>
+var ACC = "caoxinyue";
+var PW = "MjAyNjA5MDg=";
+function show(){ document.getElementById('gate').style.display='none'; document.getElementById('content').style.display='block'; }
+function check(){
+  var u = document.getElementById('u').value.trim();
+  var p = document.getElementById('p').value;
+  var err = document.getElementById('err');
+  if(u !== ACC){ err.textContent = '账号不正确'; return; }
+  if(btoa(unescape(encodeURIComponent(p))) !== PW){ err.textContent = '密码不正确'; return; }
+  try{ sessionStorage.setItem('auth_'+ACC, '1'); }catch(e){}
+  show();
+}
+try{ if(sessionStorage.getItem('auth_'+ACC) === '1'){ show(); } }catch(e){}
+</script>
+</body>
+</html>

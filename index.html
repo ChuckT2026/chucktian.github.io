@@ -305,13 +305,14 @@
 
     <div class="card center">
       <span class="tag">如何获取你的专属讲义</span>
-      <h3 style="margin:8px 0">你的讲义链接，已通过微信单独发送</h3>
-      <p class="note" style="margin:10px 0">在读学员：Chuck 会把你的专属讲义页链接通过微信私发给你。点击链接即可在浏览器查看、回看你的课程 PPT，手机电脑都能打开。</p>
-      <p class="note">如未收到链接，或链接打不开，请直接微信联系 Chuck。</p>
+      <h3 style="margin:8px 0">你的专属账号与密码，已通过微信单独发送</h3>
+      <p class="note" style="margin:10px 0">在读学员：Chuck 会把你的账号与密码通过微信私发。点击下方「学员登录入口」，输入账号与密码，即可在浏览器查看、回看你的课程 PPT / PDF，手机电脑都能打开，半年内免费反复查看。</p>
+      <div style="margin-top:14px"><a href="courses/login.html" style="display:inline-block;background:var(--accent);color:#fff;padding:11px 24px;border-radius:9px;font-weight:700;font-size:15px;">学员登录入口 →</a></div>
+      <p class="note" style="margin-top:14px">如未收到账号密码，或登录有问题，请直接微信联系 Chuck。</p>
     </div>
 
     <p class="note" style="margin-top:16px;text-align:center">
-      每位学员的讲义页地址独立且不可猜测，仅你本人可见自己的内容。
+      每位学员的讲义页独立且不可猜测，登录后仅本人可见自己的内容；真正的查看权限由腾讯文档授权兜底。
     </p>
   </div>
 </section>
@@ -357,12 +358,13 @@
 </footer>
 
 <!--
-  学员专区说明（Tier 2 · 每学员独立页面）
+  学员专区说明（v3 · 统一登录页 + 每学员独立页面）
   ----------------------------------------------------------------
-  本站不内置账号系统（纯静态）。每位学员的讲义放在独立、不可猜测的页面：
-      courses/s/<随机token>.html
-  由 _admin/generate_student_pages.py 根据 students.csv 生成，链接由 Chuck 微信私发。
-  首页 #courses 仅作入口说明，不公开任何讲义地址。
+  本站不内置账号系统（纯静态）。学员机制由 _admin/generate_student_pages.py 生成：
+    - courses/login.html        统一登录页：输入「账号 + 密码」→ 跳转到各自专属页
+    - courses/s/<账号>.html      每位学员一页（账号即页面路径），登录后显示其专属讲义
+  由 students.csv 驱动；首页 #courses 的「学员登录入口」指向 login.html。
+  真正的查看权限由腾讯文档「仅指定人 / 链接+密码」兜底；前端账号密码仅为门槛。
   详见 README.md「学员专属页」。
 -->
 

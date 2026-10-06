@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>学员登录 | Chuck Tian</title>
+<style>
+  :root{--navy:#0E2240;--accent:#2D6CDF;--bg:#F5F8FC;--ink:#1B2533;--muted:#5A6678;--line:#E3E9F2}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  .brand{font-weight:700;color:var(--navy);letter-spacing:.3px}
+  .brand span{color:var(--accent)}
+  .gate{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0E2240,#15315C);padding:20px}
+  .login{background:#fff;border-radius:16px;padding:34px 30px;width:100%;max-width:380px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+  .login .brand{font-size:20px;margin-bottom:14px}
+  .login h1{font-size:22px;color:var(--navy);margin-bottom:6px}
+  .login p{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .row{margin-bottom:14px}
+  .row label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .row input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:15px;outline:none}
+  .row input:focus{border-color:var(--accent)}
+  .login button{width:100%;padding:12px;background:var(--accent);color:#fff;border:0;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer}
+  .login button:hover{background:#1E50B5}
+  .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:18px}
+  .back{display:inline-block;margin-top:16px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="gate"><div class="login">
+  <div class="brand">Chuck Tian</div>
+  <h1>学员登录</h1>
+  <p>请输入你的账号与密码，进入专属讲义。</p>
+  <div class="row"><label>账号</label><input id="u" placeholder="请输入账号" autocomplete="off"></div>
+  <div class="row"><label>密码</label><input id="p" type="password" placeholder="请输入密码" autocomplete="off"></div>
+  <button onclick="login()">进入讲义</button>
+  <div class="err" id="err"></div>
+  <a class="back" href="../index.html">← 返回首页</a>
+</div></div>
+<script>
+var USERS = {"zhuxinyi":"MjAyNjA5MjM=", "caoxinyue":"MjAyNjA5MDg="};
+function login(){
+  var u = document.getElementById('u').value.trim().toLowerCase();
+  var p = document.getElementById('p').value;
+  var err = document.getElementById('err');
+  if(!(u in USERS)){ err.textContent = '账号不存在'; return; }
+  if(btoa(unescape(encodeURIComponent(p))) !== USERS[u]){ err.textContent = '密码不正确'; return; }
+  try{ sessionStorage.setItem('auth_'+u, '1'); }catch(e){}
+  location.href = 's/' + u + '.html';
+}
+</script>
+</body>
+</html>
