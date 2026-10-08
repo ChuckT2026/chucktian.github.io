@@ -94,10 +94,8 @@
   .fact{background:var(--soft);border-radius:10px;padding:14px}
   .fact b{display:block;color:var(--navy);font-size:14px;margin-bottom:2px}
   .fact span{font-size:12px;color:var(--muted)}
-  .portrait{background-color:var(--navy2);
-    background-image:linear-gradient(135deg, rgba(14,34,64,.6), rgba(45,108,223,.4));
-    border-radius:14px;min-height:200px;display:flex;align-items:center;justify-content:center;
-    color:rgba(255,255,255,.8);font-size:14px;text-align:center;padding:20px}
+  .portrait{background-color:var(--navy2);border-radius:14px;overflow:hidden;min-height:280px;position:relative;box-shadow:0 4px 12px rgba(14,34,64,.12)}
+  .portrait img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top}
   .contact{background:var(--navy);color:#fff;border-radius:16px;padding:42px;margin-top:10px}
   .contact h2{color:#fff}
   .contact .sub{color:rgba(255,255,255,.82)}
@@ -320,19 +318,19 @@
 <!-- ABOUT (small, at the end) -->
 <section id="about">
   <div class="wrap">
-    <div class="eyebrow">ABOUT · 一小段就够</div>
+    <div class="eyebrow">ABOUT ME</div>
     <h2>关于 Chuck</h2>
     <div class="about" style="margin-top:18px">
       <div>
-        <p class="sub">我是 Chuck（田志全）。15 年工程研发底色 + 麦肯锡战略训练 + 甲方科技与医疗平台操盘，现以一人公司（OPC）形态，帮企业和个人把 AI 与战略这件事想清楚、跑出来。中英双语，服务全球时区。</p>
+        <p class="sub">我是 Chuck，10年海外经验，15 年工程研发 + 麦肯锡战略咨询 + 甲方科技与医疗平台操盘手，帮企业把 AI 与战略，帮个人把升学和求职，这 2 件事想清楚，跑出来。用中英双语服务全球客户。</p>
         <div class="facts" style="margin-top:18px">
-          <div class="fact"><b>麦肯锡 Associate</b><span>多伦多 office</span></div>
-          <div class="fact"><b>飞利浦 / 方舟健客</b><span>甲方研发与战略，直接向 CEO 汇报</span></div>
-          <div class="fact"><b>Rotman MBA</b><span>多伦多大学 (2024)</span></div>
-          <div class="fact"><b>机械工程硕士</b><span>Lehigh University (2014)</span></div>
+          <div class="fact"><b>北美麦肯锡咨询顾问</b><span>多伦多 office</span></div>
+          <div class="fact"><b>上市公司前副总裁</b><span>直接和 CEO 对接</span></div>
+          <div class="fact"><b>Rotman MBA</b><span>多伦多大学</span></div>
+          <div class="fact"><b>飞利浦高级研发工程师</b><span>医疗器械与数字健康</span></div>
         </div>
       </div>
-      <div class="portrait">在此放一张职业照<br>（建议浅色背景、半身）</div>
+      <div class="portrait"><img src="chuck-portrait.jpg" alt="Chuck Tian"></div>
     </div>
   </div>
 </section>
